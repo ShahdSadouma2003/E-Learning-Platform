@@ -1,0 +1,619 @@
+:root {
+  --primary-color: #2b2b89;
+  --secondary-color: #dda52c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular";
+  background-color: black;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Icon (scoped so it won't clash with your old .logo rules) */
+header .brand .logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;                      
+  background: linear-gradient(135deg, #86a8ff, #6c63ff);
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: transparent;                        
+  box-shadow: 0 8px 22px rgba(108, 99, 255, .25);
+}
+
+/* White diamond */
+header .brand .logo::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+/* Small pink diamond in the center */
+header .brand .logo::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #ffc1d6, #ff6fb3);
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+
+/* Wordmark */
+.brand-name {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: .2px;
+  background: linear-gradient(90deg, #6e84ff, #4d74ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Optional hover polish */
+.brand:hover .logo {
+  filter: brightness(1.05);
+  box-shadow: 0 10px 28px rgba(108, 99, 255, .32);
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+  height: 100px;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 10px;
+}
+
+nav ul li {
+  margin: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 22px;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  color: #dda52c;
+}
+
+nav {
+  width: 20vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 2;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  flex: 2;
+}
+
+#login {
+  border-radius: 20px;
+  background-color: white;
+  border-color: gold;
+  border: 3px solid goldenrod;
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+  font-size: 20px;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+#login:hover {
+  background-color: #dda52c;
+}
+
+#register {
+  border-radius: 20px;
+  background-color: goldenrod;
+  border-color: goldenrod;
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+  transition: all 1s;
+  font-size: 20px;
+  border: 3px solid #dda52c;
+  cursor: pointer;
+}
+
+#register:hover {
+  background-color: white;
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo img {
+  width: 200px;
+  height: 100px;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding-right: 30px;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: black;
+}
+
+@media screen and (max-width: 900px) {
+  .hamburger {
+      display: block;
+      margin-left: 20px;
+  }
+
+  nav ul {
+      display: none;
+      flex-direction: column;
+      justify-content: start;
+      position: absolute;
+      top: 89px;
+      left: -12px;
+      height: 1000px;
+      width: 280px;
+      background-color: aliceblue;
+  }
+  nav ul li {
+      display: block;
+      margin: 30px;
+  }
+  .buttons {
+      display: none;
+      position: absolute;
+      left: 4px;
+      bottom: 15px;
+      width: 271px;
+      height: 106px;
+  }
+  .buttons button {
+      padding: 0px;
+      margin: 0px;
+      text-align: center;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+  .logo {
+      width: 200px;
+  }
+  .logo img {
+      width: 200px;
+      padding: 0;
+      margin: 0;
+  }
+  nav {
+      justify-content: center;
+  }
+  nav ul {
+      display: flex;
+  }
+  nav ul li {
+      display: block;
+      margin: 10px;
+      font-size: 18px;
+  }
+  .buttons {
+      width: 271px;
+      height: 106px;
+  }
+  .buttons button {
+      padding: 0px;
+      margin: 0px;
+      text-align: center;
+  }
+}
+@media screen and (min-width: 1300px) and (max-width: 1615px) {
+  nav {
+      justify-content: center;
+      flex: 4;
+  }
+  nav ul {
+      display: flex;
+  }
+  nav ul li {
+      display: block;
+      margin: 0 30px;
+      font-size: 24px;
+  }
+  .buttons {
+      width: 271px;
+      height: 106px;
+  }
+  .buttons button {
+      padding: 0px;
+      margin: 0px;
+      text-align: center;
+  }
+}
+
+.carousel-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+  margin-left: 150px;
+}
+
+.carousel-content p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.carousel-content p {
+  color: white;
+  font-weight: bold;
+}
+
+.carousel-content button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: white;
+  color: white;
+}
+.carousel-content p, .carousel-content button {
+  font-weight: bold;
+}
+
+.carousel-content button {
+  border-color: transparent;
+}
+
+.swiper-slide {
+  text-align: center;
+  padding: 66px;
+  background: #f8f8f8;
+  border-radius: 10px;
+}
+
+.mySwiper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  max-height: 200px; /* Add this line to limit the height of the images */
+}
+
+.swiper {
+  width: 600px;
+  height: 300px;
+  cursor: pointer;
+}
+
+.mySwiper {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  padding: 66px;
+  background: #f8f8f8;
+  border-radius: 10px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  font-size: 24px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #007bff;
+  width: 8px;
+  height: 8px;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.mySwiper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Add rounded corners */
+}
+.slide-content {
+  position: relative;
+}
+
+.slide-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.slide-content p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.shahdDiv {
+  width: 200px;
+  margin: 20px auto;
+}
+
+.shahdDiv {
+  width: 80%; /* Adjust the width as needed */
+  height: 60%; /* Adjust the height as needed */
+}
+
+.contact-box {
+  width: 600px;
+  height: 590px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: black;
+  border: 1px solid #2b2b89; /* Light gray border */
+
+}
+
+.contact-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left:250px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid white; /* Light gray border */
+  border-radius: 4px;
+  background-color: lightgray;
+  text-align: center;
+}
+
+.form-group textarea {
+  height: 40px; /* Smaller height */
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100px;
+  padding: 10px;
+  background-color: lightgray; /* Light gray button */
+  margin-left: 230px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px; /* Add some space between input and button */
+}
+
+button[type="submit"]:hover {
+  background-color: lightgray;
+  color: black;
+}
+.contact-us {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.contact-us select,
+.contact-us textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+.contact-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#map {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+iframe {
+  width: 40%;
+  height: 400px;
+  border: none;
+}
+.location-boxes {
+  display: flex;
+  justify-content: center;
+}
+
+.location-box {
+  width: 400px;
+  background-color: lightgray; /* Set the background color */
+  border: 2px solid lightgray; /* Set the border color and thickness */
+  border-radius: 10px; /* Add rounded corners */
+  margin: 20px; /* Add some spacing between boxes */
+  padding: 20px; /* Add some padding inside the box */
+  text-align: center;
+}
+
+.location-box h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.location-box p {
+  font-weight: bold;
+  line-height: 1.6; /* Adjust line height as needed */
+}
+/* Add CSS for the location container */
+.location-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 40px auto;
+}
+
+.location-container h2 {
+  margin-bottom: 20px;
+}
+
+.location-boxes {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.location-box {
+  width: 400px;
+  background-color: lightgray;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.location-box h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.location-box p {
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+iframe {
+  max-width: 100%;
+  height: 400px;
+  border: none;
+}
+
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #0000FF;
+  color: #fff;
+  padding: 20px;
+}
+
+.footer-left, .footer-middle, .footer-right {
+  padding: 10px;
+  text-align: center;
+}
+
+.footer-left {
+  border-right: 1px solid #0000FF;
+}
+
+.footer-right {
+  border-left: 1px solid #0000FF;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0000FF;
+  color: #fff;
+  padding: 20px;
+}
+
+.footer-left, .footer-middle, .footer-right {
+  text-align: left;
+  flex: 1;
+}
+.footer-left{
+  margin-left: 200px;
+}
+.footer-middle {
+  text-align: center;
+}
+ter-middle {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+#login::before,
+#register::before {
+  content: attr(data-text); /* get text from data-text attribute */
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(0, 120%); /* start from bottom */
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+#login:hover::before {
+  transform: translate(0, 0); /* move to center */
+  opacity: 1;
+}
+
+#register:hover::before {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+#login, 
+#register {
+  display: flex;
+  justify-content: center;  /* horizontally center text */
+  align-items: center;      /* vertically center text */
+  position: relative;       /* needed for animation */
+  overflow: hidden;         /* hide text overflow during animation */
+} 

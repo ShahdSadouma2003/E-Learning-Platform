@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="register.css" />
+</head>
+<body>
+  <div class="page">
+    <!-- Left illustration -->
+    <section class="art">
+      <!-- Simple inline SVG illustration (keeps it self-contained) -->
+      <svg class="scene" viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="12"/>
+          </filter>
+        </defs>
+        <ellipse cx="260" cy="310" rx="220" ry="18" fill="#e8f0fe"/>
+        <rect x="60" y="210" width="400" height="10" rx="5" fill="#B8CDFD"/>
+        <rect x="75" y="150" width="110" height="70" rx="8" fill="#C2E7FF"/>
+        <rect x="205" y="170" width="90" height="50" rx="6" fill="#B3E5C5"/>
+        <rect x="320" y="150" width="40" height="70" rx="6" fill="#FFD6A5"/>
+        <rect x="120" y="220" width="280" height="8" rx="4" fill="#90B4F9"/>
+        <rect x="120" y="228" width="16" height="56" rx="4" fill="#90B4F9"/>
+        <circle cx="270" cy="190" r="28" fill="#7C4DFF"/>
+        <rect x="235" y="208" width="70" height="12" rx="6" fill="#7C4DFF" opacity="0.4"/>
+        <rect x="180" y="240" width="28" height="35" rx="4" fill="#C2E7FF"/>
+        <rect x="380" y="238" width="44" height="38" rx="6" fill="#C2E7FF"/>
+        <rect x="240" y="100" width="16" height="70" rx="8" fill="#7C4DFF" transform="rotate(-25 248 135)"/>
+        <circle cx="135" cy="120" r="24" fill="#E7F0FF"/>
+        <circle cx="135" cy="120" r="10" fill="#90B4F9"/>
+        <g opacity="0.4">
+          <circle cx="420" cy="80" r="6" fill="#90B4F9"/>
+          <circle cx="395" cy="60" r="4" fill="#B3E5C5"/>
+          <circle cx="360" cy="88" r="5" fill="#FFD6A5"/>
+          <path d="M120 70 C180 20, 320 20, 380 70" stroke="#D0D8FF" stroke-width="2" fill="none" stroke-dasharray="6 8"/>
+        </g>
+      </svg>
+    </section>
+
+    <!-- Right side content -->
+    <section class="panel">
+      <div class="brand">
+        <div class="logo">◆</div>
+        <span class="brand-name">ghostlamp</span>
+      </div>
+
+      <h1 class="title">Welcome to Family</h1>
+      <p class="subtitle">A workspace to connect with millions around the world.</p>
+
+      <!-- Form card -->
+      <form class="card" action="#" method="post" autocomplete="on">
+        <!-- User Name -->
+        <label class="field">
+          <span class="icon">
+            <!-- user icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-5 0-9 2.5-9 5.5A1.5 1.5 0 0 0 4.5 21h15A1.5 1.5 0 0 0 21 19.5C21 16.5 17 14 12 14Z"/></svg>
+          </span>
+          <input type="text" id="username" name="username" placeholder="User Name" required>
+          <span class="status ok" aria-hidden="true"></span>
+        </label>
+
+        <!-- Email -->
+        <label class="field">
+          <span class="icon">
+            <!-- mail icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg>
+          </span>
+          <input type="email" id="email" name="email" placeholder="Email Address" required>
+          <span class="status ok" aria-hidden="true"></span>
+        </label>
+
+        <!-- Password -->
+        <label class="field">
+          <span class="icon">
+            <!-- lock icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2Zm-6 0V7a2 2 0 0 1 4 0v2Z"/></svg>
+          </span>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+          <span class="peek" aria-hidden="true">👁️</span>
+        </label>
+
+        <!-- Confirm Password -->
+        <label class="field">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2Zm-6 0V7a2 2 0 0 1 4 0v2Z"/></svg>
+          </span>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Repeat Password" required>
+        </label>
+
+        <!-- Phone -->
+        <label class="field">
+          <span class="icon">
+            <!-- phone icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.05 15.05 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.36 11.36 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 8a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .6 3.6 1 1 0 0 1-.25 1Z"/></svg>
+          </span>
+          <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">Sign Up Now</button>
+          <button type="button" class="btn ghost">Get Login</button>
+        </div>
+
+        <div class="divider"><span>Or you can join with</span></div>
+
+        <div class="social">
+          <button type="button" class="social-btn" aria-label="Continue with Google">G</button>
+          <button type="button" class="social-btn" aria-label="Continue with Facebook">f</button>
+          <button type="button" class="social-btn" aria-label="Continue with Twitter">t</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+</html>

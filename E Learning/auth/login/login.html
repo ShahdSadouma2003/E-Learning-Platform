@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login • ghostlamp</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <main class="page">
+    <div class="auth-card">
+      <!-- Left illustration -->
+      <section class="art">
+        <!-- minimal friendly SVG illustration -->
+        <svg viewBox="0 0 600 450" aria-hidden="true" class="art-svg">
+          <defs>
+            <linearGradient id="grad" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#e9f0ff" stop-opacity="0.9"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="600" height="450" rx="24" fill="url(#grad)"/>
+          <ellipse cx="300" cy="380" rx="180" ry="22" fill="#dfe7ff"/>
+          <g transform="translate(120,160)">
+            <rect x="45" y="95" width="270" height="10" rx="5" fill="#bcd0ff"/>
+            <rect x="80" y="40" width="80" height="54" rx="12" fill="#cde2ff"/>
+            <rect x="180" y="60" width="45" height="34" rx="8" fill="#b7e4c7"/>
+            <rect x="235" y="42" width="30" height="52" rx="8" fill="#ffd6a5"/>
+            <circle cx="120" cy="10" r="14" fill="#c9d8ff"/>
+            <circle cx="170" cy="88" r="24" fill="#6c63ff"/>
+            <rect x="115" y="105" width="10" height="40" rx="5" fill="#9bb8ff"/>
+            <rect x="115" y="165" width="20" height="24" rx="6" fill="#cde2ff"/>
+            <rect x="240" y="165" width="32" height="24" rx="6" fill="#cde2ff"/>
+            <path d="M20 0 C 120 -40, 210 -40, 310 0" fill="none" stroke="#d6defc" stroke-width="3" stroke-dasharray="4 8"/>
+          </g>
+        </svg>
+      </section>
+
+      <!-- Right form -->
+      <section class="form-wrap">
+        <header class="brand">
+          <span class="badge">🟦</span>
+          <span class="name">ghostlamp</span>
+        </header>
+
+        <h1 class="title">Welcome back</h1>
+        <p class="subtitle">Sign in to continue your workspace.</p>
+
+        <form action="login.php" method="post" class="form">
+          <!-- Email -->
+          <label class="input-field">
+            <span class="icon" aria-hidden="true">
+              <!-- mail icon -->
+              <svg viewBox="0 0 24 24"><path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 2l8 5 8-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <input type="email" id="email" name="email" placeholder="Email Address" required autocomplete="email"/>
+            <span class="status ok" aria-hidden="true"></span>
+          </label>
+
+          <!-- Password -->
+          <label class="input-field">
+            <span class="icon" aria-hidden="true">
+              <!-- lock icon -->
+              <svg viewBox="0 0 24 24"><path d="M7 10V7a5 5 0 0 1 10 0v3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="15" r="1.4" fill="currentColor"/></svg>
+            </span>
+            <input type="password" id="password" name="password" placeholder="Password" required autocomplete="current-password"/>
+            <button type="button" class="peek" aria-label="Show password">●</button>
+          </label>
+
+          <div class="row">
+            <label class="remember">
+              <input type="checkbox" name="remember" />
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="primary">Get Login</button>
+
+          <div class="divider"><span>or continue with</span></div>
+
+          <div class="socials">
+            <button type="button" class="social" aria-label="Sign in with Google">g</button>
+            <button type="button" class="social" aria-label="Sign in with Facebook">f</button>
+            <button type="button" class="social" aria-label="Sign in with Twitter">t</button>
+          </div>
+
+          <p class="alt">Don’t have an account? <a href="#" class="link">Sign up</a></p>
+        </form>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
