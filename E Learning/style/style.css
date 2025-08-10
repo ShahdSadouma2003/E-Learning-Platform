@@ -14,7 +14,8 @@ body {
   background-color: white;
 }
 
-.brand {
+.brand{
+  justify-self: start;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -71,13 +72,20 @@ header .brand .logo::after {
   box-shadow: 0 10px 28px rgba(108, 99, 255, .32);
 }
 
-header {
-  display: flex;
-  justify-content: space-evenly;
+header{
+  /* center the whole header content in the screen */
+  width: min(1200px, 96vw);
+  margin: 0 auto;
+
+  /* 3 columns: left (logo), center (nav), right (buttons) */
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  background-color: white;
+
   height: 100px;
-  width: 100%;
+  background: #fff;
+  gap: 24px;
+  padding: 0 16px;
 }
 
 nav ul {
@@ -88,19 +96,24 @@ nav ul {
   margin: 10px;
 }
 
-nav ul li {
-  margin: 50px;
+nav ul{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;   /* center items */
   align-items: center;
-  font-size: 22px;
-  transition: all 1s;
+  gap: 32px;                  /* even spacing */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li{
   cursor: pointer;
+  font-size: 20px;
+  transition: color .2s ease;
 }
 
-nav ul li:hover {
-  color: #dda52c;
-}
+nav ul li:hover{ 
+  color: var(--secondary-color, #dda52c);
+ }
 
 nav {
   width: 20vw;
@@ -109,15 +122,15 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   flex: 2;
+  justify-self: center;
+  width: 100%;
 }
 
-.buttons {
+.buttons{
+  justify-self: end;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
-  flex: 2;
+  gap: 12px;
 }
 
 #login {
@@ -202,6 +215,7 @@ nav {
       display: block;
       margin: 30px;
   }
+
   .buttons {
       display: none;
       position: absolute;
@@ -210,6 +224,7 @@ nav {
       width: 271px;
       height: 106px;
   }
+
   .buttons button {
       padding: 0px;
       margin: 0px;
@@ -517,8 +532,15 @@ ter-middle {
 } 
 
 /* ---------- Base ---------- */
-* { box-sizing: border-box; }
-html, body { height: 100%; }
+* 
+{ 
+  box-sizing: border-box; 
+}
+
+html, body { 
+  height: 100%; 
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -768,8 +790,8 @@ body {
 }
 
 /* Fade animation */
-.fade{ animation: fade 1s; }
-@keyframes fade{ from{ opacity:.35 } to{ opacity:1 } }
+/*.fade{ animation: fade 1s; }
+@keyframes fade{ from{ opacity:.35 } to{ opacity:1 } }*/
 
 /* Arrows */
 .prev, .next{
@@ -787,10 +809,22 @@ body {
   /* box-shadow: 0 10px 26px rgba(0,0,0,.25);*/
   transition: transform .15s ease, filter .2s ease;
 }
-.prev:hover, .next:hover{ filter: brightness(1.05); }
-.prev:active, .next:active{ transform: translateY(-50%) scale(.98); }
-.prev{ left: 16px; }
-.next{ right: 16px; }
+
+.prev:hover, .next:hover{ 
+  filter: brightness(1.05); 
+}
+
+.prev:active, .next:active{ 
+  transform: translateY(-50%) scale(.98); 
+}
+
+.prev{ 
+  left: 16px; 
+}
+
+.next{ 
+  right: 16px; 
+}
 
 /* Dots */
 .dots{
@@ -806,8 +840,13 @@ body {
 
 /* Small-screen tweaks */
 @media (max-width: 640px){
-  .caption{ padding: 14px 16px; }
-  .caption .cta{ padding:10px 14px; }
+  .caption{ 
+    padding: 14px 16px; 
+  }
+  .caption .cta{ 
+    padding:10px 14px; 
+  }
+
 }
 /* ---------- Base ---------- */
 * { 
@@ -835,44 +874,102 @@ body {
   box-shadow: 0 8px 30px rgba(0,0,0,.06);
 }
 
-.brand{ display:flex; align-items:center; gap:10px; }
+.brand{ 
+  display:flex; 
+  align-items:center; 
+  gap:10px; 
+}
 
 .site-header .logo{
-  width:34px; height:34px; border-radius:12px;
+  width:34px; 
+  height:34px; 
+  border-radius:12px;
   background: linear-gradient(135deg,#86a8ff,#6c63ff);
-  display:grid; place-items:center; color:transparent; position:relative;
+  display:grid; 
+  place-items:center; 
+  color:transparent; position:relative;
   box-shadow: 0 8px 22px rgba(108,99,255,.25);
 }
+
 .site-header .logo::before{
-  content:""; width:14px; height:14px; background:#fff; border-radius:2px; transform:rotate(45deg);
+  content:""; 
+  width:14px; 
+  height:14px; 
+  background:#fff; 
+  border-radius:2px; 
+  transform:rotate(45deg);
 }
+
 .site-header .logo::after{
-  content:""; position:absolute; width:6px; height:6px; border-radius:1px;
-  background: linear-gradient(135deg,#ffc1d6,#ff6fb3); transform: rotate(45deg);
+  content:""; 
+  position:absolute; 
+  width:6px; 
+  height:6px; 
+  border-radius:1px;
+  background: linear-gradient(135deg,#ffc1d6,#ff6fb3); 
+  transform: rotate(45deg);
 }
 
 .brand-name{
   font-weight:700; font-size:20px;
   background: linear-gradient(90deg,#6e84ff,#4d74ff);
-  -webkit-background-clip:text; background-clip:text; color:transparent;
+  -webkit-background-clip:text; 
+  background-clip:text; 
+  color:transparent;
 }
 
-.main-nav ul{ list-style:none; display:flex; gap:26px; padding:0; margin:0; }
-.main-nav li{ cursor:pointer; font-weight:600; color:#344057; }
-.main-nav li:hover{ color:#6c63ff; }
+.main-nav ul{ 
+  list-style:none; 
+  display:flex; 
+  gap:26px; 
+  padding:0; 
+  margin:0; 
+}
 
-.buttons{ display:flex; gap:12px; }
+.main-nav li{ 
+  cursor:pointer; 
+  font-weight:600; 
+  color:#344057; 
+}
+
+.main-nav li:hover{ 
+  color:#6c63ff; 
+}
+
+.buttons{ 
+  display:flex; 
+  gap:12px; 
+}
+
 #login, #register{
-  border-radius:20px; width:100px; height:34px;
-  font-weight:700; font-size:14px; cursor:pointer;
-  position:relative; overflow:hidden;
-  border:2px solid #dda52c; background:#fff; color:#333;
+  border-radius:20px; 
+  width:100px; 
+  height:34px;
+  font-weight:700; 
+  font-size:14px; 
+  cursor:pointer;
+  position:relative; 
+  overflow:hidden;
+  border:2px solid #dda52c; 
+  background:#fff; 
+  color:#333;
 }
-#register{ background:#dda52c; color:#fff; border-color:#dda52c; }
-#login:hover{ background:#ffe9ad; }
-#register:hover{ filter: brightness(1.05); }
 
-/* ---------- Slideshow (W3Schools style, modernized) ---------- */
+#register{ 
+  background:#dda52c; 
+  color:#fff; 
+  border-color:#dda52c; 
+}
+
+#login:hover{ 
+  background:#ffe9ad;
+ }
+
+#register:hover{ 
+  filter: brightness(1.05);
+ }
+
+/* ---------- Slideshow  ---------- */
 .slideshow-section{
   background: radial-gradient(1200px 600px at 50% -20%, #2a2f48, transparent 60%), ;
   padding: 38px 0 28px;
