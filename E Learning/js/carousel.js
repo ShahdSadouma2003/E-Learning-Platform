@@ -2,7 +2,7 @@
 
 let slideIndex = 1;
 let timer = null;
-const AUTOPLAY_MS = 5000;
+const AUTOPLAY_MS = 15000;
 
 const slides = () => Array.from(document.querySelectorAll('.mySlides'));
 const dots   = () => Array.from(document.querySelectorAll('.dot'));
