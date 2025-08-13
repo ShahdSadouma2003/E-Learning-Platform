@@ -126,7 +126,7 @@ nav {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  border: 3px solid #dda52c;
+  border: 3px solid #00008B;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,22 +134,22 @@ nav {
 
 #login {
   background-color: white;
-  color: goldenrod;
+  color: black;
 }
 
 #login:hover {
-  background-color: #dda52c;
-  color: white;
+  background-color: #00FFFF;
+  color: black;
 }
 
 #register {
-  background-color: goldenrod;
-  color: white;
+  background-color: #40E0D0;
+  color: black;
 }
 
 #register:hover {
   background-color: white;
-  color: goldenrod;
+  color: #0818A8;
 }
 
 .hamburger {
@@ -406,7 +406,7 @@ button[type="submit"] {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #dda52c;
+  background-color: #00008B;
   color: white;
   border: none;
   border-radius: 4px;
@@ -415,7 +415,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #c79424;
+  background-color: #00008B;
 }
 
 /* --- Location Section --- */
@@ -441,7 +441,7 @@ button[type="submit"]:hover {
 .location-box {
   width: 400px;
   background-color: #f7f7f7;
-  border: 1px solid #eee;
+  border: 1px solid #1F51FF;
   border-radius: 10px;
   margin: 10px;
   padding: 20px;
@@ -533,7 +533,7 @@ iframe {
     color: #fff;
     width: min(80%, 820px);
     padding: 20px 22px;
-    backdrop-filter: blur(6px);
+    /*backdrop-filter: blur(6px);*/
     border-radius: 14px;
 }
 
